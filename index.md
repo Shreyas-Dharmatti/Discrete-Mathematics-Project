@@ -167,7 +167,7 @@ Most textbook derivations treat PageRank strictly as an eigen-problem, yet the *
 1. **Link transition** (weight **d**): each page pours its current probability mass equally through its out-links.  
 2. **Teleport jump** (weight **1 – d**): simultaneously, a thin mist of probability condenses uniformly on *all* pages.
 
-Because the Google matrix $G = dH + (1-d)E$ simply re-allocates probability without creating or destroying it, the Markov process is **conservative**: the total mass stays 1.  The steady-state vector $\mathbf r$ is therefore nothing more than the long-run *distribution* of that fluid.  Large entries of $\mathbf r$ correspond to *sinks* that receive persistent inflow from many well-connected sources.
+Because the Google matrix $$G = dH + (1-d)E$$ simply re-allocates probability without creating or destroying it, the Markov process is **conservative**: the total mass stays 1.  The steady-state vector $$\mathbf r$$ is therefore nothing more than the long-run *distribution* of that fluid.  Large entries of $$\mathbf r$$ correspond to *sinks* that receive persistent inflow from many well-connected sources.
 
 Two quick corollaries become transparent in this picture:
 * **Dangling stability** – a page with no out-links contributes *all* of its probability to the teleport pool, preventing masses from disappearing.
@@ -188,7 +188,7 @@ We construct a miniature web of six pages that span three topical clusters.
 | E | ML Algorithms | machine-learning | D |
 | F | Random Blog | misc | A |
 
-The directed graph translates into the adjacency matrix $A$ below (rows = receivers, columns = senders):
+The directed graph translates into the adjacency matrix $$A$$ below (rows = receivers, columns = senders):
 
 ```
        A  B  C  D  E  F
@@ -200,7 +200,7 @@ E  [ 0  0  1  1  0  0 ]
 F  [ 0  0  0  0  0  0 ]
 ```
 
-With damping factor $d = 0.85$ the power method converges in **20 iterations**:
+With damping factor $$d = 0.85$$ the power method converges in **20 iterations**:
 
 | Iter | A | B | C | D | E | F |
 |------|-------|-------|-------|-------|-------|-------|
@@ -215,7 +215,7 @@ With damping factor $d = 0.85$ the power method converges in **20 iterations**:
 
 ## From PageRank to Actual Search Results
 
-A real search engine blends **content relevance** with **link authority**.  Using the final PageRank vector $r$ and a simple keyword-match score $k$, we rank pages by
+A real search engine blends **content relevance** with **link authority**.  Using the final PageRank vector $$r$$ and a simple keyword-match score $$k$$, we rank pages by
 $$S = 0.6\,k + 0.4\,r.$$
 
 ### Query: *"python tutorial"*
