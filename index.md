@@ -6,7 +6,8 @@ title: Blog Explaining Algorithm behind Google Search
 # How Google Finds What You're Looking For: PageRank & Linear Algebra
 
 *(Disclaimer: There are a couple of places, where the rendering was slighly distraught, requesting reader to kindly bear with that)* 
-(If the rendering is causing any difficulty in understanding the concept, kindly refer to this [link](https://github.com/Shreyas-Dharmatti/Discrete-Mathematics-Project/blob/main/README.md)  
+*(If the rendering is causing any difficulty in understanding the concept, kindly refer to this [link](https://github.com/Shreyas-Dharmatti/Discrete-Mathematics-Project/blob/main/README.md))* 
+  
 PageRank represents one of the most elegant applications of linear algebra to real-world problems, transforming web search from primitive keyword matching into the sophisticated authority-based ranking we rely on today. This algorithm, developed by Larry Page and Sergey Brin in 1996, interprets the web as a massive directed graph and applies fundamental theorems from matrix theory to determine page importance.
 
 ## The Mathematical Foundation: From Web Graph to Linear System
