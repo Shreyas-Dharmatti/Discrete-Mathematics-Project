@@ -1,8 +1,3 @@
----
-layout: default
-title: Blog Explaining Algorithm behind Google Search
----
-
 # How Google Finds What You're Looking For: PageRank & Linear Algebra
 
 
