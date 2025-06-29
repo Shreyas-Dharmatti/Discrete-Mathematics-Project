@@ -535,20 +535,6 @@ The Google matrix exhibits fascinating spectral properties:
 
 PageRank demonstrates robust stability under small perturbations. The algorithm's mathematical structure ensures that minor changes in link structure produce proportionally small changes in rankings, critical for handling the web's dynamic nature.
 
-## Real-World Extensions Beyond Web Search
-
-### Citation Networks  
-
-Academic papers form directed graphs through citations, enabling PageRank-based impact metrics. The h-index and other bibliometrics pale beside eigenvector centrality measures for identifying influential research.
-
-### Social Network Analysis
-
-Social media platforms employ PageRank variants to identify influential users and content. Twitter's original "Who to Follow" algorithm directly implemented personalized PageRank with user interaction graphs.
-
-### Recommendation Systems
-
-Netflix, Amazon, and Spotify use PageRank principles to identify "influential" users whose preferences predict broader appeal. These systems construct bipartite graphs connecting users to content, then apply PageRank to both node types.
-
 ## The Algorithm That Built Modern Search
 
 PageRank's mathematical elegance transformed web search from keyword matching to authority-based ranking. The algorithm's success stems from its theoretical foundations:
@@ -617,6 +603,20 @@ print("PageRank scores:", pagerank_scores)
 ```
 
 This mathematical exploration reveals PageRank as far more than a search algorithm—it represents a fundamental breakthrough in using linear algebra to extract meaning from network structure, with applications spanning academic citation analysis to social media influence measurement. The algorithm's enduring relevance demonstrates the power of mathematical theory in solving complex computational challenges at unprecedented scale.
+
+## Real-World Extensions Beyond Web Search
+
+### Citation Networks  
+
+Academic papers form directed graphs through citations, enabling PageRank-based impact metrics. The h-index and other bibliometrics pale beside eigenvector centrality measures for identifying influential research.
+
+### Social Network Analysis
+
+Social media platforms employ PageRank variants to identify influential users and content. Twitter's original "Who to Follow" algorithm directly implemented personalized PageRank with user interaction graphs.
+
+### Recommendation Systems
+
+Netflix, Amazon, and Spotify use PageRank principles to identify "influential" users whose preferences predict broader appeal. These systems construct bipartite graphs connecting users to content, then apply PageRank to both node types.
 
 ## References
 
