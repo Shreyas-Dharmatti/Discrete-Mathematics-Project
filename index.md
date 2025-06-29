@@ -22,7 +22,7 @@ For a simple 4-page network where:
 
 The adjacency matrix becomes:
 
-```bash
+```python
 A = [[0, 0, 1, 1],    # Page A receives from C, D
      [1, 0, 0, 0],    # Page B receives from A
      [1, 1, 0, 0],    # Page C receives from A, B  
