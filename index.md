@@ -137,7 +137,7 @@ The power method's convergence rate depends on the **second-largest eigenvalue**
 
 $$\text{Convergence rate} = \left|\frac{\lambda_2}{\lambda_1}\right| = |\lambda_2|$$
 
-For the Google matrix with damping factor d = 0.85, theoretical analysis shows $$\lvert \lambda_1 \rvert <= 0.85 $$, ensuring rapid convergence. In practice, 50-100 iterations achieve sufficient precision for web-scale computation.
+For the Google matrix with damping factor d = 0.85, theoretical analysis shows $$\lvert \lambda_2 \rvert <= 0.85 $$, ensuring rapid convergence. In practice, 50-100 iterations achieve sufficient precision for web-scale computation.
 
 ## The Damping Factor: Balancing Authority and Democracy
 
