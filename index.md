@@ -127,7 +127,7 @@ The Google matrix G satisfies three crucial properties that guarantee convergenc
 
 Under these conditions, the Perron-Frobenius theorem guarantees:
 - Unique eigenvalue λ = 1 with multiplicity 1
-- All other eigenvalues satisfy |λᵢ| < 1
+- All other eigenvalues satisfy \( |\lambda_i| < 1 \)
 - Unique positive eigenvector (the PageRank vector)
 
 ### Convergence Rate Analysis
@@ -136,7 +136,7 @@ The power method's convergence rate depends on the **second-largest eigenvalue**
 
 $$\text{Convergence rate} = \left|\frac{\lambda_2}{\lambda_1}\right| = |\lambda_2|$$
 
-For the Google matrix with damping factor d = 0.85, theoretical analysis shows |λ₂| ≤ 0.85, ensuring rapid convergence. In practice, 50-100 iterations achieve sufficient precision for web-scale computation.
+For the Google matrix with damping factor d = 0.85, theoretical analysis shows \( |\lambda_i| <= 0.85 \), ensuring rapid convergence. In practice, 50-100 iterations achieve sufficient precision for web-scale computation.
 
 ## The Damping Factor: Balancing Authority and Democracy
 
@@ -170,7 +170,7 @@ Because the Google matrix $G = dH + (1-d)E$ simply re-allocates probability with
 
 Two quick corollaries become transparent in this picture:
 * **Dangling stability** – a page with no out-links contributes *all* of its probability to the teleport pool, preventing masses from disappearing.
-* **Second-eigenvalue speed** – the gap $1-|\lambda_2|$ measures how fast transient eddies die out; a smaller gap means slower mixing.
+* **Second-eigenvalue speed** – the gap \( 1 - |\lambda_2| \) measures how fast transient eddies die out; a smaller gap means slower mixing.
 
 ---
 
@@ -392,7 +392,7 @@ $$\text{BM25}(t,d) = IDF(t) \times \frac{TF(t,d) \times (k_1 + 1)}{TF(t,d) + k_1
 Where:
 - k₁ controls term frequency saturation (typically 1.2-2.0)
 - b controls length normalization (typically 0.75)
-- |d| is document length, avgdl is average document length
+- \(|d| \) is document length, avgdl is average document length
 
 ### 2. Semantic Matching
 Modern systems use vector embeddings to match semantically similar terms:
