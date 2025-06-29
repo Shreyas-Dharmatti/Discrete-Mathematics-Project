@@ -5,7 +5,7 @@ title: Blog Explaining Algorithm behind Google Search
 
 # How Google Finds What You're Looking For: PageRank & Linear Algebra
 
-*(Disclaimer: There are a few instances where the rendering may appear slightly disrupted; the reader is kindly requested to excuse these minor imperfections.If the rendering is causing any difficulty in understanding the concept, kindly refer to this [link](https://github.com/Shreyas-Dharmatti/Discrete-Mathematics-Project/blob/main/README.md))* 
+(*Authors: Shreyas Dharmatti, Divyanshu Pandey*)
   
 PageRank represents one of the most elegant applications of linear algebra to real-world problems, transforming web search from primitive keyword matching into the sophisticated authority-based ranking we rely on today. This algorithm, developed by Larry Page and Sergey Brin in 1996, interprets the web as a massive directed graph and applies fundamental theorems from matrix theory to determine page importance.
 
@@ -137,7 +137,7 @@ The power method's convergence rate depends on the **second-largest eigenvalue**
 
 $$\text{Convergence rate} = \left|\frac{\lambda_2}{\lambda_1}\right| = |\lambda_2|$$
 
-For the Google matrix with damping factor d = 0.85, theoretical analysis shows \( |\lambda_i| <= 0.85 \), ensuring rapid convergence. In practice, 50-100 iterations achieve sufficient precision for web-scale computation.
+For the Google matrix with damping factor d = 0.85, theoretical analysis shows $$\lvert \lambda_1 \rvert <= 0.85 $$, ensuring rapid convergence. In practice, 50-100 iterations achieve sufficient precision for web-scale computation.
 
 ## The Damping Factor: Balancing Authority and Democracy
 
@@ -171,7 +171,7 @@ Because the Google matrix $G = dH + (1-d)E$ simply re-allocates probability with
 
 Two quick corollaries become transparent in this picture:
 * **Dangling stability** – a page with no out-links contributes *all* of its probability to the teleport pool, preventing masses from disappearing.
-* **Second-eigenvalue speed** – the gap \( 1 - |\lambda_2| \) measures how fast transient eddies die out; a smaller gap means slower mixing.
+* **Second-eigenvalue speed** – the gap $$1 - \lvert \lambda_1 \rvert < 1 $$ measures how fast transient eddies die out; a smaller gap means slower mixing.
 
 ---
 
@@ -393,7 +393,7 @@ $$\text{BM25}(t,d) = IDF(t) \times \frac{TF(t,d) \times (k_1 + 1)}{TF(t,d) + k_1
 Where:
 - k₁ controls term frequency saturation (typically 1.2-2.0)
 - b controls length normalization (typically 0.75)
-- \(|d| \) is document length, avgdl is average document length
+- $$\lvert d \rvert$$ is document length, avgdl is average document length
 
 ### 2. Semantic Matching
 Modern systems use vector embeddings to match semantically similar terms:
