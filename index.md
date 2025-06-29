@@ -1,5 +1,10 @@
+---
+layout: default
+title: Blog Explaining Algorithm behind Google Search
+---
+
 # How Google Finds What You're Looking For: PageRank & Linear Algebra
-*A comprehensive mathematical exploration of the algorithm that built the modern web*
+
 
 PageRank represents one of the most elegant applications of linear algebra to real-world problems, transforming web search from primitive keyword matching into the sophisticated authority-based ranking we rely on today. This algorithm, developed by Larry Page and Sergey Brin in 1996, interprets the web as a massive directed graph and applies fundamental theorems from matrix theory to determine page importance.
 
@@ -161,11 +166,11 @@ Most textbook derivations treat PageRank strictly as an eigen-problem, yet the *
 1. **Link transition** (weight **d**): each page pours its current probability mass equally through its out-links.  
 2. **Teleport jump** (weight **1 – d**): simultaneously, a thin mist of probability condenses uniformly on *all* pages.
 
-Because the Google matrix \(G = dH + (1-d)E\) simply re-allocates probability without creating or destroying it, the Markov process is **conservative**: the total mass stays 1.  The steady-state vector \(\mathbf r\) is therefore nothing more than the long-run *distribution* of that fluid[15][16].  Large entries of \(\mathbf r\) correspond to *sinks* that receive persistent inflow from many well-connected sources.
+Because the Google matrix $G = dH + (1-d)E$ simply re-allocates probability without creating or destroying it, the Markov process is **conservative**: the total mass stays 1.  The steady-state vector $\mathbf r$ is therefore nothing more than the long-run *distribution* of that fluid.  Large entries of $\mathbf r$ correspond to *sinks* that receive persistent inflow from many well-connected sources.
 
 Two quick corollaries become transparent in this picture:
 * **Dangling stability** – a page with no out-links contributes *all* of its probability to the teleport pool, preventing masses from disappearing.
-* **Second-eigenvalue speed** – the gap \(1-|\lambda_2|\) measures how fast transient eddies die out; a smaller gap means slower mixing.
+* **Second-eigenvalue speed** – the gap $1-|\lambda_2|$ measures how fast transient eddies die out; a smaller gap means slower mixing.
 
 ---
 
@@ -182,7 +187,7 @@ We construct a miniature web of six pages that span three topical clusters.
 | E | ML Algorithms | machine-learning | D |
 | F | Random Blog | misc | A |
 
-The directed graph translates into the adjacency matrix \(A\) below (rows = receivers, columns = senders):
+The directed graph translates into the adjacency matrix $A$ below (rows = receivers, columns = senders):
 
 ```
        A  B  C  D  E  F
@@ -194,7 +199,7 @@ E  [ 0  0  1  1  0  0 ]
 F  [ 0  0  0  0  0  0 ]
 ```
 
-With damping factor \(d = 0.85\) the power method converges in **20 iterations**:
+With damping factor $d = 0.85$ the power method converges in **20 iterations**:
 
 | Iter | A | B | C | D | E | F |
 |------|-------|-------|-------|-------|-------|-------|
@@ -209,10 +214,8 @@ With damping factor \(d = 0.85\) the power method converges in **20 iterations**
 
 ## From PageRank to Actual Search Results
 
-A real search engine blends **content relevance** with **link authority**.  Using the final PageRank vector \(r\) and a simple keyword-match score \(k\), we rank pages by
-\[
-S = 0.6\,k + 0.4\,r.
-\]
+A real search engine blends **content relevance** with **link authority**.  Using the final PageRank vector $r$ and a simple keyword-match score $k$, we rank pages by
+$$S = 0.6\,k + 0.4\,r.$$
 
 ### Query: *"python tutorial"*
 
@@ -232,7 +235,7 @@ Pure keyword matching would already place **A** first, but PageRank still matter
 | 2 | E | **1.000** | 0.190 | 0.676 |
 | 3 | A | 0.000 | 0.253 | 0.101 |
 
-Here **PageRank is decisive**: pages D and E tie on keywords, but D outranks E thanks to higher incoming trust, reflecting the idea that “who recommends you” beats “how many recommend you.”
+Here **PageRank is decisive**: pages D and E tie on keywords, but D outranks E thanks to higher incoming trust, reflecting the idea that "who recommends you" beats "how many recommend you."
 
 ---
 
@@ -246,9 +249,7 @@ Even on a six-node toy graph, PageRank captures *global structural signals* that
 
 In the PageRank example, we saw how search results combine **content relevance** (k) with **link authority** (PageRank) using the formula:
 
-\[
-S = 0.6 \times k + 0.4 \times r
-\]
+$$S = 0.6 \times k + 0.4 \times r$$
 
 But how exactly is the keyword relevance score **k** calculated? This section explains the mathematical foundations behind text matching and relevance scoring used in modern search engines.
 
@@ -386,9 +387,7 @@ For query "python tutorial" against Page A:
 ### 1. BM25 Algorithm
 An improvement over TF-IDF that addresses document length bias:
 
-\[
-\text{BM25}(t,d) = IDF(t) \times \frac{TF(t,d) \times (k_1 + 1)}{TF(t,d) + k_1 \times (1 - b + b \times \frac{|d|}{avgdl})}
-\]
+$$\text{BM25}(t,d) = IDF(t) \times \frac{TF(t,d) \times (k_1 + 1)}{TF(t,d) + k_1 \times (1 - b + b \times \frac{|d|}{avgdl})}$$
 
 Where:
 - k₁ controls term frequency saturation (typically 1.2-2.0)
@@ -617,36 +616,21 @@ pagerank_scores = pagerank(A)
 print("PageRank scores:", pagerank_scores)
 ```
 
-This mathematical exploration reveals PageRank as far more than a search algorithm—it represents a fundamental breakthrough in using linear algebra to extract meaning from network structure, with applications spanning academic citation analysis to social media influence measurement[30][32]. The algorithm's enduring relevance demonstrates the power of mathematical theory in solving complex computational challenges at unprecedented scale.
+This mathematical exploration reveals PageRank as far more than a search algorithm—it represents a fundamental breakthrough in using linear algebra to extract meaning from network structure, with applications spanning academic citation analysis to social media influence measurement. The algorithm's enduring relevance demonstrates the power of mathematical theory in solving complex computational challenges at unprecedented scale.
 
 ## References
 
 1. Page, L., Brin, S., Motwani, R., & Winograd, T. (1999). *The PageRank Citation Ranking: Bringing Order to the Web*. Stanford InfoLab Technical Report.  
    *[This is the seminal paper that introduced the PageRank algorithm. It is referenced in most discussions of web search and PageRank theory.]*
 
-2. Langville, A. N., & Meyer, C. D. (2012). *Google’s PageRank and Beyond: The Science of Search Engine Rankings*. Princeton University Press.  
+2. Langville, A. N., & Meyer, C. D. (2012). *Google's PageRank and Beyond: The Science of Search Engine Rankings*. Princeton University Press.  
    *[This book provides a comprehensive mathematical overview of PageRank and related algorithms.]*
 
 3. Brin, S., & Page, L. (1998). *The Anatomy of a Large-Scale Hypertextual Web Search Engine*. In *Proceedings of the 7th International World Wide Web Conference (WWW7)*, 107–117.  
-   *[This paper gives the foundational technical details behind Google’s early search engine.]*
+   *[This paper gives the foundational technical details behind Google's early search engine.]*
 
 4. Meyer, C. D. (2000). *Matrix Analysis and Applied Linear Algebra*. Society for Industrial and Applied Mathematics (SIAM).  
    *[Used for the linear algebra and matrix theory underpinnings of PageRank.]*
 
 5. Golub, G. H., & Van Loan, C. F. (2013). *Matrix Computations*. Johns Hopkins University Press.  
    *[A standard reference for matrix computations and eigenvalue problems.]*
-
-6. Haveliwala, T. H. (2002). *Topic-Sensitive PageRank*. In *Proceedings of the 11th International World Wide Web Conference (WWW2002)*, 517–526.  
-   *[Discusses personalized PageRank and its applications.]*
-
-7. Manning, C. D., Raghavan, P., & Schütze, H. (2008). *Introduction to Information Retrieval*. Cambridge University Press.  
-   *[Standard reference for information retrieval, including TF-IDF and BM25.]*
-
-8. Robertson, S., & Zaragoza, H. (2009). *The Probabilistic Relevance Framework: BM25 and Beyond*. *Foundations and Trends in Information Retrieval*, 3(4), 333–389.  
-   *[Details on BM25 and advanced relevance scoring.]*
-
-9. Meyer, C. D. (1989). *Stochastic Complementarity, Uncoupling Markov Chains, and the Theory of Nearly Reducible Systems*. *SIAM Review*, 31(2), 240–272.  
-   *[Background on Markov chains and irreducibility.]*
-
-10. Seneta, E. (2006). *Non-negative Matrices and Markov Chains*. Springer Series in Statistics.  
-    *[For Perron-Frobenius theory and stochastic matrices.]*
