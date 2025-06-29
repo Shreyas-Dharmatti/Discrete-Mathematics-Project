@@ -1,5 +1,6 @@
 # How Google Finds What You're Looking For: PageRank & Linear Algebra
-*A comprehensive mathematical exploration of the algorithm that built the modern web*
+
+*(Disclaimer: There might be a few inconsistensicies with rendering of some mathematical symbols, due to some compatibility & version issues, kindly bear with that)*
 
 PageRank represents one of the most elegant applications of linear algebra to real-world problems, transforming web search from primitive keyword matching into the sophisticated authority-based ranking we rely on today. This algorithm, developed by Larry Page and Sergey Brin in 1996, interprets the web as a massive directed graph and applies fundamental theorems from matrix theory to determine page importance.
 
