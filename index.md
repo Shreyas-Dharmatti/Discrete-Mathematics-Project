@@ -127,7 +127,7 @@ The Google matrix G satisfies three crucial properties that guarantee convergenc
 
 Under these conditions, the Perron-Frobenius theorem guarantees:
 - Unique eigenvalue λ = 1 with multiplicity 1
-- All other eigenvalues satisfy \( |\lambda_i| < 1 \)
+- All other eigenvalues satisfy $(|\lambda_i| < 1)$
 - Unique positive eigenvector (the PageRank vector)
 
 ### Convergence Rate Analysis
