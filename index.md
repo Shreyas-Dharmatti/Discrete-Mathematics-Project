@@ -171,7 +171,7 @@ Because the Google matrix $$G = dH + (1-d)E$$ simply re-allocates probability wi
 
 Two quick corollaries become transparent in this picture:
 * **Dangling stability** – a page with no out-links contributes *all* of its probability to the teleport pool, preventing masses from disappearing.
-* **Second-eigenvalue speed** – the gap $$1 - \lvert \lambda_1 \rvert < 1 $$ measures how fast transient eddies die out; a smaller gap means slower mixing.
+* **Second-eigenvalue speed** – the gap $$1 - \lvert \lambda_2 \rvert < 1 $$ measures how fast transient eddies die out; a smaller gap means slower mixing.
 
 ---
 
