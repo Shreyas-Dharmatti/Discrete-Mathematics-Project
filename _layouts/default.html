@@ -3,7 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
-  {% include head-custom.html %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- MathJax -->
+  <script async id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+  <!-- Syntax highlighting style -->
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    pre {
+      background: #f5f5f5;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    code {
+      font-family: Consolas, Monaco, Menlo, monospace;
+      font-size: 0.95rem;
+    }
+
+    h1, h2, h3 {
+      color: #333;
+    }
+  </style>
 </head>
 <body>
   {{ content }}
